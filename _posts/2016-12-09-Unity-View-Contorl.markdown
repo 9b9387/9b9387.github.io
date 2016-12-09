@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Unity摄像机控制"
+title: "Unity3D摄像机视角控制"
 data: 2016-12-07 16:26:00 +0800
 categories: diary
 ---
@@ -54,7 +54,7 @@ private void Scale(float delta) {
 }
 ```
 
-**旋转的实现方式：**计算摄像机到锚点的距离，然后根据偏移的角度计算球体表面的位置，更新位置后LookAt锚点。
+**旋转的实现方式：**通过摄像机到锚点的距离和偏移的角度计算球体表面的位置，更新摄像机位置后，LookAt锚点。
 
 ```
 private void Rotate(float delatAngleX, float delatAngleY) {
