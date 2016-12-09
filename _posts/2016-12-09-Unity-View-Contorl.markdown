@@ -75,6 +75,7 @@ private void Rotate(float delatAngleX, float delatAngleY) {
 ```
 
 最后根据实际需要加入限制条件就可以使用了，我用[TouchKit](https://github.com/prime31/TouchKit)的手势代码，注册手势事件来调用对应的视角控制方法。
+
 - 单指拖动时，调用Move方法
 - 双指拖动时，调用Rotate方法
 - Pinch手势时，调用Scale方法
