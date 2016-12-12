@@ -77,7 +77,8 @@ private void Rotate(float delatAngleX, float delatAngleY) {
 最后根据实际需要加入限制条件就可以使用了，我用[TouchKit](https://github.com/prime31/TouchKit)的手势代码，注册手势事件来调用对应的视角控制方法。
 
 - 单指拖动时，调用Move方法
-- 双指拖动时，调用Rotate方法
+- 双指上下拖动时，调用Rotate(deltaX, 0)
+- Rotate手势时，调用Rotate(0, deltaY)
 - Pinch手势时，调用Scale方法
 
 最后效果还不错，大部分都是数学知识。另一种实现方式是，锚点可以用一个GameObject代替，摄像机作为它的子节点会更容易计算，但是添加到实际项目中的时候配置会多一点点，而且逼格也低一些。
