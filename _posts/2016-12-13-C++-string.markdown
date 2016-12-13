@@ -1,0 +1,25 @@
+---
+layout: post
+title: "C++中的字符串笔记"
+data: 2016-12-13 14:14:00 +0800
+categories: diary
+---
+
+[单元测试源码](https://github.com/9b9387/CPP_Practice/blob/master/CPP_Practice/StringPractice.hpp)
+
+- string类型是通过使用char实例化basic_string<>模板而创建的.char_traits<>模板的类指定它的行为.
+- string类为了兼顾C语言,在最后一位添加'\0'
+- C++中只有字符串被修改的时候才创建各自的拷贝，这种实现方式称为写时复制（copy-on-write）策略 (测试用例 StringTest.Storage)
+- string的初始化方式：1.空对象。2.字符数组做参数的构造方法。3.用等号操作符初始化。4.用string对象初始化。5.string是一个容器对象，也可以使用迭代器来构造。6.单个字符的多个拷贝初始化。(StringTest.Init)
+- substr()开始位置作为第一个参数，待选字符的个数作为其第二个参数。如果不传参数，会构造出整个string对象的一个拷贝。(StringTest.substr)
+- append()增加字符串长度(StringTest.append)
+- size(),length()返回字符串中存储的字符数。
+- capacity()返回当前分配的存储空间规模。
+- reserve()预留一定数量的储存空间。
+- resize()截断或者填充字符串。
+- insert()向字符串中插入字符(StringTest.replace)
+- replace()替换字符串中的字符(StringTest.replace)，如果find()找不到要查找的字符,返回string::npos。
+- toupper(),tolower()改变大小写
+- erase()第一个参数表示开始删除字符的位置,默认是0,第二个参数表示要删除多少个字符,默认是string:npos 如果第二个参数大于实际的字符数量,将全部删除.(StringTest.erase)
+- 基于操作符的字符串比较是根据ASCII校对序列进行比较.也可以使用compare()方法进行更复杂的比较.(StringTest.compare)
+- at()访问字符比直接用下标安全,如果越界会抛出一个异常.
