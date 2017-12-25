@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Lua table元方法"
+title: "深度理解Lua中的table"
 data: 2017-04-28 23:19:00 +0800
 categories: diary
 ---
@@ -345,6 +345,7 @@ print(tostring(test))
 
 ---- result output ----
 My name is test
+My name is test
 ```
 
 这个也不做过多说明了，很容易理解。有一点提一下就是print方法会自动调用tostring(test)
@@ -360,7 +361,6 @@ My name is test
 
 ```
 local meta = {
-    __metatable = {name = "__metatable"},
     __len = function(t)
         local result = 0
         for k, v in pairs(t) do
@@ -389,7 +389,7 @@ print(#test)
 6
 ```
 
-Lua中使用`#`获取长度有个特性，就是如果某个key的值是nil就结束，上面例子中，test第4个值是nil，那返回的长度为3。我们重新定义了`__len`后返回了，用遍历的方式计算长度，返回table内元素的数量为6。
+Lua中使用`#`获取长度有个特性，就是如果某个key对应的值是nil就结束，上面例子中，test第4个值是nil，那返回的长度为3。我们重新定义了`__len`后返回了，用遍历的方式计算长度，返回table内元素的数量为6。
 
 ## __gc
 
