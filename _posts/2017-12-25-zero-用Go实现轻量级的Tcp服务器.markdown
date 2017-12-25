@@ -5,7 +5,7 @@ data: 2017-12-25 14:19:00 +0800
 categories: diary
 ---
 
-[zero](https://github.com/9b9387/zero)是我用Go实现的一个非常轻量的Socket服务器，可用于快速制作游戏Demo，整个项目不超过500行代码。提供心跳检查，会话管理功能。
+[zero](https://github.com/9b9387/zero)是我用Go实现的一个非常轻量的Socket服务器，可用于快速制作游戏Demo，整个项目不超过500行代码。提供心跳检测，会话管理功能。
 接收发送数据使用二进制数据流的方式，可以非常方便的配合Protobuf使用。
 
 ### Message消息结构
