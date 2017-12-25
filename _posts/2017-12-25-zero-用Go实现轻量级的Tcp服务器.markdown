@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "用Go实现轻量级的Tcp服务器"
+title: "zero——Go实现轻量级的Tcp服务器"
 data: 2017-12-25 14:19:00 +0800
 categories: diary
 ---
 
-zero是我用Go实现的一个非常轻量的Socket服务器，可用于快速制作游戏Demo，整个项目不超过500行代码。
+[zero](https://github.com/9b9387/zero)是我用Go实现的一个非常轻量的Socket服务器，可用于快速制作游戏Demo，整个项目不超过500行代码。
 接收发送数据使用二进制数据流的方式，可以非常方便的配合Protobuf使用。
 
 ## Message消息结构
@@ -45,3 +45,5 @@ Socket服务被我封装在`service.go`内。需要注册一下事件，分别�
 `conn`创建后会启动负责接收`readCoroutine`和发送`writeCoroutine`的协程。
 
 `session`会被保存在`SocketService.sessions`中进行管理。
+
+项目地址：[https://github.com/9b9387/zero](https://github.com/9b9387/zero)
