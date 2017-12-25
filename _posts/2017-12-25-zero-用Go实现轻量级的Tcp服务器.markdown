@@ -22,7 +22,7 @@ type Message struct {
 ### Session会话
 每个连接对应一个Session对象，在连接建立的时候创建，并在断开连接的时候删除。
 
-每个Session保存当前的`conn`的指针，可以绑定一个UserID。
+每个Session保存当前的`conn`的指针，可以绑定一个`UserID`。
 
 Session还提供一个key-value map用于保存自定义的信息。
 
