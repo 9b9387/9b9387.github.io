@@ -46,4 +46,4 @@ Socket服务被我封装在`service.go`内。需要注册一下事件，分别�
 
 `session`会被保存在`SocketService.sessions`中进行管理。
 
-项目地址：[https://github.com/9b9387/zero](https://github.com/9b9387/zero)
+**项目地址**：[https://github.com/9b9387/zero](https://github.com/9b9387/zero)
