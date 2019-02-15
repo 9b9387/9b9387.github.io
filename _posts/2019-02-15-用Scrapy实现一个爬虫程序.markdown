@@ -4,7 +4,6 @@ title: "用Scrapy实现一个爬虫程序"
 data: 2019-02-15 16:38:00 +0800
 categories: diary
 ---
-# 用Scrapy实现一个爬虫程序
 
 ## Scrapy框架
 Scrapy是我今天浏览网页的时候看到有人提到才知道，很早之前就想尝试做一个爬虫工具，刚好拿来用一下。如果自己写很难避免去实现html请求，dom分析，输出数据这些操作，无异于制造轮子。Scrapy解决了这些基础的问题，先写个Demo熟悉一下Scrapy。
@@ -92,3 +91,5 @@ FEED_EXPORT_ENCODING = 'utf-8'
 ]
 ```
 看样子是满足之前定制的需求了，翻页抓取也很简单，找到下一页按钮的url，请求这个url再调用一次parse方法。官网也有例子，这里不多说了。
+
+Demo仓库地址：[https://github.com/9b9387/douban_crawler.git](https://github.com/9b9387/douban_crawler.git)
