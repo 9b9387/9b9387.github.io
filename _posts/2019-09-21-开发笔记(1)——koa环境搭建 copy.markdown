@@ -1,0 +1,108 @@
+---
+layout: post
+title: "开发笔记(1)——koa环境搭建"
+data: 2019-09-21 20:00:00 +0800
+categories: diary
+---
+
+## koa环境搭建
+安装node.js
+```
+brew install node
+```
+
+创建项目，项目名叫dudu
+```
+mkdir dudu
+cd dudu
+npm init
+```
+添加koa模块
+```
+npm install -save koa
+```
+编写index.js
+```javascript
+const Koa = require('koa')
+const app = new Koa()
+
+app.use( async ( ctx ) => {
+  ctx.body = 'hello koa2'
+})
+
+app.listen(3000)
+console.log('start-quick is starting at port 3000')
+```
+
+运行
+```
+npm start // node index.js
+```
+
+## 单元测试环境
+
+```
+npm install --save-dev mocha chai supertest
+```
+
+- mocha 模块是测试框架
+- chai 模块是用来进行测试结果断言库
+- supertest 模块是http请求测试库，用来请求API接口
+
+创建test文件夹
+```
+dudu
+├── index.js
+└── test
+    └── request.test.js
+```
+index.js
+```javascript
+const Koa = require('koa')
+const app = new Koa()
+
+const server = async ( ctx, next ) => {
+    if(ctx.url === '/test')
+    {
+        ctx.body = {info:'this is test message.'}
+        next && next()
+    }
+}
+app.use(server)
+
+module.exports = app
+
+app.listen(3000)
+console.log('start-quick is starting at port 3000')
+```
+request.test.js
+```javascript
+const supertest = require('supertest')
+const chai = require('chai')
+const app = require('./../index')
+
+const expect = chai.expect
+const request = supertest(app.listen())
+
+// 测试套件/组
+describe('测试url请求', () => {
+    // 测试用例
+    it('测试url test', (done) => {
+        request
+            .get('/test')
+            .expect(200)
+            .end((err, res) => {
+                // 断言判断结果是否为string类型
+                expect(res.body.info).to.be.an('string')
+                done()
+            })
+    })
+})
+```
+
+执行测试，或者在package.json中增加test script:
+```
+./node_modules/mocha/bin/mocha
+```
+## TypeScript
+TODO
