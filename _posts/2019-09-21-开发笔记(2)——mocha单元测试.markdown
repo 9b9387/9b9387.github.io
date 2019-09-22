@@ -1,0 +1,65 @@
+---
+layout: post
+title: "mocha单元测试"
+data: 2019-09-22 20:00:00 +0800
+categories: diary
+---
+## 单元测试环境
+
+安装依赖
+```
+npm install --save-dev mocha chai supertest
+npm install --save-dev @types/chai @types/mocha @types/supertest
+```
+
+- mocha 模块是测试框架
+- chai 模块是用来进行测试结果断言库
+- supertest 模块是http请求测试库，用来请求API接口
+
+创建test文件夹
+```
+dudu
+├── src
+│   └── application.js
+└── test
+    └── request.test.ts
+```
+
+测试代码 request.test.js
+```typescript
+import 'mocha';
+import * as chai from 'chai'
+import supertest from "supertest";
+import {Application} from './../src/application'
+
+let expect = chai.expect
+let app = new Application();
+let request = supertest(app.run(3001))
+
+// 测试套件/组
+describe('测试url请求', () => {
+    // 测试用例
+    it('测试url test', (done: Mocha.Done) => {
+        request
+            .get('/test')
+            .expect(200)
+            .end((err: any, res: any) => {
+                // 断言判断结果是否为string类型
+                expect(res.body.info).to.be.an('string')
+                done()
+            })
+    })
+})
+```
+
+在package.json中增加test script
+```json
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha -r ts-node/register test/**/*.test.ts --exit",
+    "start": "node index.js"
+  },
+```
+执行测试
+```
+npm test
+```

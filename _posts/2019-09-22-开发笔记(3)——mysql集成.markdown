@@ -1,0 +1,30 @@
+---
+layout: post
+title: "开发笔记(2)——mysql集成"
+data: 2019-09-21 20:00:00 +0800
+categories: diary
+---
+
+## 环境搭建
+
+### 数据库
+
+安装mysql数据库
+```
+brew install mysql
+```
+启动mysql服务
+```
+brew services start mysql
+brew services stop mysql    // 停止服务
+brew services restart mysql // 重启服务
+brew services list          // 服务列表
+```
+数据库配置
+```
+mysql -u root -p            // 使用root登录mysql
+create database dudu;       // 创建数据库
+create user "9b9387"@"localhost" identified by "password";  // 创建用户
+grant all privileges on dudu.* to "9b9387"@'%';             // 授权dudu库全部权限
+flush privileges;           // 刷新权限
+```
