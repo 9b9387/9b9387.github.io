@@ -55,8 +55,7 @@ describe('测试url请求', () => {
 在package.json中增加test script
 ```json
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha -r ts-node/register test/**/*.test.ts --exit",
-    "start": "node index.js"
+    "test": "./node_modules/mocha/bin/mocha -r ts-node/register test/**/*.test.ts --exit"
   },
 ```
 执行测试

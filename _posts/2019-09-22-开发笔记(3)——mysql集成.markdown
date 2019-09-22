@@ -28,3 +28,35 @@ create user "9b9387"@"localhost" identified by "password";  // 创建用户
 grant all privileges on dudu.* to "9b9387"@'%';             // 授权dudu库全部权限
 flush privileges;           // 刷新权限
 ```
+安装mysql
+```
+npm install -save mysql @types/mysql
+```
+编写测试用例
+```typescript
+import 'mocha';
+import * as chai from 'chai'
+import supertest from "supertest";
+import * as mysql from 'mysql';
+
+// 测试套件/组
+describe('mysql测试', () => {
+    // 测试用例
+    it('连接测试', (done: Mocha.Done) => {
+        var connection = mysql.createConnection({
+          host     : '127.0.0.1',
+          user     : '9b9387',
+          password : 'xxxxxxxx'
+        });
+        
+        connection.connect(function(err) {
+          if (err) {
+            done();
+            return;
+          }
+        
+          done();
+        });
+    })
+})
+```
