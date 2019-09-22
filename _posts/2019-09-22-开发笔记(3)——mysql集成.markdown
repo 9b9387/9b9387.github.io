@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "开发笔记(2)——mysql集成"
-data: 2019-09-21 20:00:00 +0800
+title: "开发笔记(3)——mysql集成"
+data: 2019-09-22 21:00:00 +0800
 categories: diary
 ---
 
