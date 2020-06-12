@@ -2,7 +2,6 @@
 layout: post
 title: "用Scrapy实现一个爬虫程序"
 data: 2019-02-15 16:38:00 +0800
-categories: diary
 ---
 
 ## Scrapy框架

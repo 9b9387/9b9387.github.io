@@ -21,12 +21,28 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 9b9387
 github_username:  9b9387
-
+excerpt_separator: "\n\n"
 # Build settings
 markdown: kramdown
-theme: minima
+theme: plainwhite
 # gems:
 #   - jekyll-feed
 exclude:
   - Gemfile
   - Gemfile.lock
+
+plainwhite:
+  name: 9b9387
+  tagline: Game Developer
+  date_format: "%b %-d, %Y"
+
+  social_links:
+    twitter: 9b9387
+    github: 9b9387
+  search: true
+  # navigation:
+  #   - title: My Work
+  #     url: "/my-work"
+  #   - title: Resume
+  #     url: "/resume"
+show_excerpts: true

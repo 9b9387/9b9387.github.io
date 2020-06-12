@@ -2,7 +2,6 @@
 layout: post
 title: "开发笔记(1)——koa环境搭建"
 data: 2019-09-21 20:00:00 +0800
-categories: diary
 ---
 
 ## koa环境搭建

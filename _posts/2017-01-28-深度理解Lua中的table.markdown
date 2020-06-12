@@ -2,7 +2,6 @@
 layout: post
 title: "深度理解Lua中的table"
 data: 2017-04-28 23:19:00 +0800
-categories: diary
 ---
 
 Lua的table是个很有意思的东西。有些内容平时写代码的时候很少接触到，但是了解一下还是很有意思的。

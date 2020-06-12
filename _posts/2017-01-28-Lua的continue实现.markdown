@@ -2,7 +2,6 @@
 layout: post
 title: "Lua的continue实现"
 data: 2017-04-28 14:37:00 +0800
-categories: diary
 ---
 Lua中没有continue关键字，但是有两种方法可以曲线救国。
 

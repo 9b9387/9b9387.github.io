@@ -2,7 +2,6 @@
 layout: post
 title: "zero——Go实现轻量级的Tcp服务器"
 data: 2017-12-25 14:19:00 +0800
-categories: diary
 ---
 
 [zero](https://github.com/9b9387/zero)是我用Go实现的一个非常轻量的Socket服务器，可用于快速制作游戏Demo，整个项目不超过500行代码。提供心跳检测，会话管理功能。

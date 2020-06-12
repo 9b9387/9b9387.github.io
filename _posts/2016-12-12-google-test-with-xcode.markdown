@@ -2,7 +2,6 @@
 layout: post
 title: "XCode下搭建GoogleTest框架测试环境"
 data: 2016-12-12 21:25:00 +0800
-categories: diary
 ---
 
 一直想系统学习一下C++的东西，几本C++的书也落了很厚的灰。之前对C++的认识也停留在应用开发的层面，这次决心深入的去系统学习一下。Mac上首选就是XCode，我非常推崇测试驱动开发，所以决定用GoogleTest来做测试框架，来验证学习过程中的代码。

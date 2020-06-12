@@ -2,7 +2,6 @@
 layout: post
 title: "C++中的字符串笔记"
 data: 2016-12-13 14:14:00 +0800
-categories: diary
 ---
 
 [单元测试源码](https://github.com/9b9387/CPP_Practice/blob/master/CPP_Practice/StringPractice.hpp)
