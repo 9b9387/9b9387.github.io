@@ -24,7 +24,8 @@ github_username:  9b9387
 excerpt_separator: "\n\n"
 # Build settings
 markdown: kramdown
-theme: plainwhite
+#theme: plainwhite
+remote_theme: thelehhman/plainwhite-jekyll
 # gems:
 #   - jekyll-feed
 exclude:
@@ -46,4 +47,3 @@ plainwhite:
   #   - title: Resume
   #     url: "/resume"
 show_excerpts: true
-remote_theme: thelehhman/plainwhite-jekyll
