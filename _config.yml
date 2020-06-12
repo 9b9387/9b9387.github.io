@@ -46,3 +46,4 @@ plainwhite:
   #   - title: Resume
   #     url: "/resume"
 show_excerpts: true
+remote_theme: thelehhman/plainwhite-jekyll
