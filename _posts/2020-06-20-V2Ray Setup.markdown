@@ -1,0 +1,36 @@
+---
+layout: post
+title: "V2Ray Setup"
+data: 2020-06-19 21:00:00 +0800
+---
+
+Express VPN最近被干扰的厉害，本来想学一下Unity的ML-Agents，结果从Github clone的速度只有10k/s。
+看来不准备两个梯子没办法在这行混了，已经有一个商用VPN了，再准备一个私人代理服务器。
+搜集了一下资料，决定用`Aliyun + V2Ray`这套方案。
+
+服务器配置：
+
+- 阿里云配置操作系统CentOS，一键安装V2Ray
+```
+bash <(curl -L -s https://install.direct/go.sh)
+```
+- 查看服务器配置，记录`port`, `client id`, `alterId`
+```
+cat /etc/v2ray/config.json
+```
+- 启动服务
+```
+systemctl start v2ray
+```
+- 在阿里云后台安全组里添加放行端口
+
+客户端配置：
+
+下载V2Ray客户端，将配置信息填入后运行即可。
+
+参考：
+
+- [V2Ray 官网](https://v2ray.com/)
+- [V2Ray 配置指南](https://guide.v2fly.org/)
+- [V2Ray 客户端](https://tlanyan.me/v2ray-clients-download/)
+- [V2Ray 教程](https://tlanyan.me/v2ray-tutorial/)
