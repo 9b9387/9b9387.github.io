@@ -22,10 +22,12 @@ brew services list          // 服务列表
 数据库配置
 ```
 mysql -u root -p            // 使用root登录mysql
-create database dudu;       // 创建数据库
-create user "9b9387"@"localhost" identified by "password";  // 创建用户
-grant all privileges on dudu.* to "9b9387"@'%';             // 授权dudu库全部权限
-flush privileges;           // 刷新权限
+CREATE DATABASE dudu;       // 创建数据库
+CREATE USER 'dudu'@'%' IDENTIFIED WITH mysql_native_password BY 'dudu';  // 创建用户
+GRANT USAGE ON 'dudu'.* TO 'dudu'@'%';             
+ALTER USER 'dudu'@'%' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+GRANT ALL PRIVILEGES ON 'dudu'.* TO 'dudu'@'%';   // 授权dudu库全部权限
+FLUSH PRIVILEGES;           // 刷新权限
 ```
 安装mysql
 ```
@@ -43,18 +45,15 @@ describe('mysql测试', () => {
     // 测试用例
     it('连接测试', (done: Mocha.Done) => {
         var connection = mysql.createConnection({
-          host     : '127.0.0.1',
-          user     : '9b9387',
-          password : 'xxxxxxxx'
+            host     : '127.0.0.1',
+            user     : 'dudu',
+            password : 'dudu',
+            database : 'dudu'
         });
         
         connection.connect(function(err) {
-          if (err) {
+            expect(err).to.be.an('null');
             done();
-            return;
-          }
-        
-          done();
         });
     })
 })
