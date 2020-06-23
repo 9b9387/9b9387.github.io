@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "V2Ray Setup"
-data: 2020-06-19 21:00:00 +0800
+data: 2020-06-20 21:00:00 +0800
 ---
 
 Express VPN最近被干扰的厉害，本来想学一下Unity的ML-Agents，结果从Github clone的速度只有10k/s。
