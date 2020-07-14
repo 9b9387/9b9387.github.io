@@ -8,9 +8,13 @@ category: "OnePass"
 `vault` is a simple password manager. Given a passphrase and the name of a service, it returns a strong password for that service. You only need to remember your passphrase, which you do not give to anyone, and vault will give a different password for every service you use. The passphrase can be any text you like.
 
 - GitHub: [https://github.com/jcoglan/vault](https://github.com/jcoglan/vault)
-- Websit: [https://getvau.lt/](https://getvau.lt/)
+- Website: [https://getvau.lt/](https://getvau.lt/)
 
-### Usage:
+### Install
+```
+npm install -g vault
+```
+### Usage
 - `--phrase` or `-p` You will be prompted for your passphrase.
 - `--length` or `-l` Set the desired length.
 - `--lower [n]` (n==0) no lowercase letter, (n>0) at least n lowercase letter `a`-`z`.
@@ -33,7 +37,7 @@ vault -c google --symbol 0 // service config
 - `--clear` or `-X` Deletes all saved settings.
 - `--notes` or `-n` No longer supported.
 
-### Setting Config Format:
+### Setting Config Format
 ```
 {
   "global": {
