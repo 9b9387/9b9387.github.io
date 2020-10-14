@@ -31,7 +31,8 @@ remote_theme: thelehhman/plainwhite-jekyll
 exclude:
   - Gemfile
   - Gemfile.lock
-
+kramdown:
+  math_engine: null
 plainwhite:
   name: 9b9387
   tagline: Game Developer

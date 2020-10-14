@@ -56,6 +56,7 @@ ShaderLab的语法，之后会参照Unity的文档，单独记录其中的各个
 
 ### 矩阵变换
 位移矩阵:
+
 $$
 M_{translate}(x, y, z) = 
 \left\{ \begin{matrix} 
@@ -67,6 +68,7 @@ M_{translate}(x, y, z) =
 $$
 
 缩放矩阵：
+
 $$
 M_{scale}(x, y, z) = 
 \left\{ \begin{matrix} 
@@ -79,6 +81,7 @@ $$
 
 旋转矩阵：
 三维旋转的顺序先绕z轴旋转，其次是x轴，y轴最后。
+
 $$
 M_{rotateZ} = 
 \left\{ \begin{matrix} 
@@ -107,11 +110,13 @@ cos\theta & 0 & sin\theta \\
 $$
 
 所以顶点旋转的公式为：
+
 $$
 P' = M_{rotateY} M_{rotateX} M_{rotateZ} P
 $$
 
 最终的三维旋转矩阵为：
+
 $$
 M_{rotate}(x, y, z) = 
 \left\{ \begin{matrix} 
@@ -152,6 +157,7 @@ x_0 \\ y_0 \\ z_0
 $$
 
 三个变换矩阵相乘后的复合矩阵。对应`TransformShaderTRS.shader`
+
 $$
 \left\{ \begin{matrix}
 cosY * cosZ * s.x & -cosY * sinZ * s.y & sinY * s.z & t.x \\
