@@ -117,12 +117,12 @@ Pass { [Name and Tags] [RenderSetup] }
     - `PassFlags`标签 一个通道可指示一些标志来更改渲染管线向通道传递数据的方式。这可通过使用 PassFlags 标签来实现，该标签的值为空格分隔的标志名称。
     - `RequireOptions` 标签 一个通道可指示仅当满足某些外部条件时才渲染该通道。这可通过使用 RequireOptions 标签来实现，该标签的值为空格分隔的选项字符串。
 - `RenderSetup` 渲染状态设置:
-    - `Cull Back | Front | Off` 设置多边形剔除模式。
+    - `Cull Back \ Front \ Off` 设置多边形剔除模式。
         - `Back` 不渲染背离观察者的多边形（默认值），即剔除背面多边形。
         - `Front` 不渲染面向观察者的多边形。用于从里到外翻转对象。
         - `Off` 禁用剔除 绘制所有面。用于特殊效果。
-    - `ZTest (Less | Greater | LEqual | GEqual | Equal | NotEqual | Always)` 设置深度缓冲区测试模式。默认值为 LEqual（隐藏其后面的对象绘制）。
-    - `ZWrite On | Off` 控制是否将此对象的像素写入深度缓冲区（默认值为On）。
+    - `ZTest (Less \ Greater \ LEqual \ GEqual \ Equal \ NotEqual \ Always)` 设置深度缓冲区测试模式。默认值为 LEqual（隐藏其后面的对象绘制）。
+    - `ZWrite On \ Off` 控制是否将此对象的像素写入深度缓冲区（默认值为On）。
         - 如果要绘制实体对象，请将其保留为 On。
         - 如果要绘制半透明效果，请切换到 Off。
     - Offset OffsetFactor, OffsetUnits 设置 Z 缓冲区深度偏移。
@@ -132,15 +132,15 @@ Pass { [Name and Tags] [RenderSetup] }
         - Blend SrcFactor DstFactor, SrcFactorA DstFactorA：同上，但使用不同系数来混合 Alpha 通道。
         - BlendOp Op：不将混合颜色相加，而是对它们执行不同的操作。
         - BlendOp OpColor, OpAlpha：同上，但是对颜色 (RGB) 通道和 Alpha (A) 通道使用不同的混合操作。
-    - ColorMask RGB | A | 0 | R、G、B、A 的任意组合 设置颜色通道写入遮罩。
+    - ColorMask RGB \ A \ 0 \ R、G、B、A 的任意组合 设置颜色通道写入遮罩。
 - 旧版固定函数着色器命令 一些命令用于编写旧版“固定函数样式”着色器。这是视为已弃用的功能，因为编写表面着色器或着色器程序 可带来更大的灵活性。但是，对于非常简单的着色器，以固定函数样式编写着色器有时会更容易，因此这里提供了命令。请注意，如果不使用固定函数着色器，则会忽略以下所有命令。
-    - Lighting On | Off 顶点光照 
+    - Lighting On \ Off 顶点光照 
     - Material { Material Block } 材质颜色
-    - SeparateSpecular On | Off 镜面高光
+    - SeparateSpecular On \ Off 镜面高光
     - Color Color-value 默认颜色（如果顶点光照关闭）
-    - ColorMaterial AmbientAndDiffuse | Emission
+    - ColorMaterial AmbientAndDiffuse \ Emission
     - Fog { Fog Block } 设置固定函数 Fog 的参数。
-    - AlphaTest (Less | Greater | LEqual | GEqual | Equal | NotEqual | Always) CutoffValue 开启固定函数 Alpha 测试。
+    - AlphaTest (Less \ Greater \ LEqual \ GEqual \ Equal \ NotEqual \ Always) CutoffValue 开启固定函数 Alpha 测试。
     - SetTexture textureProperty 固定函数纹理组合器
     - Stencil 模板缓冲区可用作一般目的的每像素遮罩，以便保存或丢弃像素。
 ## UsePass
