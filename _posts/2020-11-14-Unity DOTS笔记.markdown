@@ -118,7 +118,7 @@ Unity实现了一个把C#转化为.NET assembly转化为LLVM IR的编译前端�
 
 代码运行高效比肩C/C++的原因
 - 利用了LLVM的代码优化
-- SIMD指令（数据并行）
+- SIMD指令（single instruction, multiple data 数据并行）
 
 普通指令 Scalar
 ```
