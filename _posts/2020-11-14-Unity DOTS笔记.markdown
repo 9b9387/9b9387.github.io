@@ -79,7 +79,7 @@ class MovementSystem : IComponentSystem
             pos.x++;
             pos.y++;
         });
-|   }
+    }
 }
 ```
 
