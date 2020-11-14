@@ -33,6 +33,7 @@ DOTS是Data Oriented Technology Stack的缩写，其核心内容包括：
 查询entity和获取component数组数据效率远高于 扫描式查询`GameObject.Find`，`GameObject.GetComponents`
 
 和数据库技术相似
+
 | ECS | DataBase |
 | --- | --- |
 | Entity | Key |
