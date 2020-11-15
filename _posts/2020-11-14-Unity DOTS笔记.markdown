@@ -50,7 +50,7 @@ DOTS是Data Oriented Technology Stack的缩写，其核心内容包括：
 - World Manager 管理器
 
 例子:
-```C#
+```csharp
 // 面向对象
 class Movement : MonoBehaviour
 {

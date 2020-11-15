@@ -17,7 +17,7 @@ Hybrid Render是Unity提供的DOTS渲染包，提供基于ECS的渲染System，�
 通过LocalToWorld和RenderMesh两个Components，Hybrid Render就可以把物体渲染到屏幕上。
 
 示例代码
-```C#
+```csharp
 // Entity初始化，包含两个渲染Components LocalToWorld和RenderMesh
 Entity cube = defaultWorld.EntityManager.CreateEntity(
     ComponentType.ReadOnly<LocalToWorld>(),
