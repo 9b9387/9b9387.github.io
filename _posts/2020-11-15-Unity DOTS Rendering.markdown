@@ -2,6 +2,7 @@
 layout: post
 title: "Unity DOTS Rendering"
 data: 2020-11-15 12:00:00 +0800
+category: "Unity"
 ---
 
 ECS的渲染步骤：

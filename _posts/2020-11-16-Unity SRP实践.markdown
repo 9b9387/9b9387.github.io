@@ -1,0 +1,34 @@
+---
+layout: post
+title: "Unity SRP实践"
+data: 2020-11-16 12:00:00 +0800
+category: "Unity"
+---
+
+### 创建自定义可编程渲染管线
+- 继承RenderPipeline抽象类，实现`void Render(ScriptableRenderContext context, Camera[] cameras)`方法
+- 继承`RenderPipelineAsset`抽象类，实现`RenderPipeline CreatePipeline()`方法
+
+### 绘制天空盒
+```csharp
+protected override void Render(ScriptableRenderContext context, Camera[] cameras)
+{
+    //全部相机逐次渲染
+    foreach (var camera in cameras)
+    {
+        //设置渲染相关相机参数,包含相机的各个矩阵和剪裁平面等
+        context.SetupCameraProperties(camera);
+        //绘制天空球
+        context.DrawSkybox(camera);
+        //开始执行上下文
+        context.Submit();
+    }
+}
+```
+
+### 绘制物体
+```csharp
+renderContext.DrawRenderers(cullResults, ref drawSet, ref filtSet);
+```
+执行上面命令一次代表一次绘制，如果同时渲染透明和不透明的物体，这个命令就要执行两次。
+三个参数：第一个为剪裁结果，第二个为绘制设置，第三个为过滤设置。
