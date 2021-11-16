@@ -9,7 +9,7 @@ category: "Unity TA"
 
 $$L_{out} = L_{emission} + \int_{\Omega}f_r \cdot L_i \cdot (w_i \cdot n) \cdot dw_i $$
 
-$f_r$是p点入射方向到出射方向光的反射比例，一般为BRDF。
+$$f_r$$是p点入射方向到出射方向光的反射比例，一般为BRDF。
 
 在实时渲染中，常用到的反射方程（The Reflectance Equation）是渲染方程的简化版本:
 
@@ -30,7 +30,7 @@ $$f_r = k_df_{diffuse}+k_sf_{sepcular}$$
 
 $$k_d+k_s=1$$
 
-$f_{specular}$表示高光反射部分，其公式为：
+$$f_{specular}$$表示高光反射部分，其公式为：
 
 $$f_{specular}=\frac {FDG}{4(n \cdot l)(n \cdot v)}$$
 
@@ -40,7 +40,7 @@ $$F \approx F_{schlick}$$
 
 $$F_{schlick} = F_0+(1-F_0)(1-(n \cdot v))^5$$
 
-其中，$F_0$为基础反射率，是一个常数，Unity URP中定义为0.04。
+其中，$$F_0$$为基础反射率，是一个常数，Unity URP中定义为0.04。
 
 `D`表示法线分布函数（Normal Distribution Function, NDF）主流的法线分布函数是`Trowbridge-Reitz`，因为具有更好的高光长尾。
 
