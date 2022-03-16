@@ -59,7 +59,7 @@ $$G_1(v) = \frac {(n \cdot v)}{(n \cdot v)(1-k)+k}$$
 $$k=\frac {\alpha}{2}, \alpha=(\frac {roughness+1}{2})^2$$
 
 ### URP针对BRDF的优化
-在翻看Unity UPR(v10.5.1)的源码时，发现URP在实现BRDF时，针对移动设备做了一些优化，最主要的是将$$G \cdot F$$函数简化为：
+在翻看Unity UPR(v10.5.1)的源码时，发现URP在实现BRDF时，针对移动设备做了一些优化，使用算法`Minimalist CookTorrance BRDF`，最主要的是将$$G \cdot F$$函数简化为：
 
 $$GF = \frac {1}{(n \cdot h)^2(roughness + 0.5)}$$
 
