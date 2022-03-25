@@ -1,0 +1,11 @@
+---
+layout: post
+title: "Unity PBR 实现分析"
+data: 2022-03-25 12:00:00 +0800
+category: "Unity TA"
+---
+
+```
+漫反射 = (基础色 - 金属度) * (1 - 0.04)
+```
+<img src=" /Users/shihongyang/workspace/9b9387.github.io/img/pbr/albedo.png" alt="基础色贴图" width="200"/> <img src=" /Users/shihongyang/workspace/9b9387.github.io/img/pbr/metallic.png" alt="drawing" width="200"/> <img src=" /Users/shihongyang/workspace/9b9387.github.io/img/pbr/indirectDiffuseColor.png" alt="drawing" width="200"/>
