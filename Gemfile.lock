@@ -93,9 +93,9 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (= 4.1.0)
-  jekyll-admin (~> 0.10.1)
+  jekyll-admin (~> 0.10.2)
   jekyll-feed (~> 0.6)
-  plainwhite (~> 0.11)
+  plainwhite (~> 0.13)
   webrick (~> 1.7)
 
 RUBY VERSION
