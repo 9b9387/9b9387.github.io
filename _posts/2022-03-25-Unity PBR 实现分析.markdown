@@ -9,4 +9,4 @@ category: "Unity TA"
 漫反射 = (基础色 - 金属度) * (1 - 0.04)
 ```
 <img src="{{ "/img/pbr/albedo.png" | prepend: site.baseurl }}"
- alt="基础色贴图" width="200"/> <img src="{{ "/img/pbr/metallc.png" | prepend: site.baseurl }}" alt="金属度贴图" width="200"/> <img src="{{ "/img/pbr/indirectDiffuse.png" | prepend: site.baseurl }}" alt="环境光漫反射" width="200"/>
+ alt="基础色贴图" width="200"/> <img src="{{ "/img/pbr/metallic.png" | prepend: site.baseurl }}" alt="金属度贴图" width="200"/> <img src="{{ "/img/pbr/indirectDiffuse.png" | prepend: site.baseurl }}" alt="环境光漫反射" width="200"/>
