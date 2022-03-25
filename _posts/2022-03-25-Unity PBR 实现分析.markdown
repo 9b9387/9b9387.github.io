@@ -8,5 +8,6 @@ category: "Unity TA"
 ```
 漫反射 = (基础色 - 金属度) * (1 - 0.04)
 ```
-<img src="{{ "/img/pbr/albedo.png" | prepend: site.baseurl }}"
- alt="基础色贴图" width="200"/> <img src=" /Users/shihongyang/workspace/9b9387.github.io/img/pbr/metallic.png" alt="drawing" width="200"/> <img src=" /Users/shihongyang/workspace/9b9387.github.io/img/pbr/indirectDiffuseColor.png" alt="drawing" width="200"/>
+![基础色]({{ "/img/pbr/albedo.png" | prepend: site.baseurl }}) ![金属度]({{ "/img/pbr/metallic.png" | prepend: site.baseurl }})
+
+ <!-- <img src=" /Users/shihongyang/workspace/9b9387.github.io/img/pbr/metallic.png" alt="drawing" width="200"/> <img src=" /Users/shihongyang/workspace/9b9387.github.io/img/pbr/indirectDiffuseColor.png" alt="drawing" width="200"/> -->
