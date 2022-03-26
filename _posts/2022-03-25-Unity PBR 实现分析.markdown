@@ -4,11 +4,64 @@ title: "Unity PBR 实现分析"
 data: 2022-03-25 12:00:00 +0800
 category: "Unity TA"
 ---
+实现一个PBR光照Shader，参考Unity URP管线的Lit.shader实现，这里做个记录。
 
-```
-漫反射 = (基础色 - 金属度) * (1 - 0.04)
-```
+URP管线的光照公式为：
 
-|基础色|金属度|漫反射|
-|---|---|---|
-|<img src="{{ "/img/pbr/albedo.png" | prepend: site.baseurl }}" alt="基础色贴图" width="200"/>|<img src="{{ "/img/pbr/metallic.png" | prepend: site.baseurl }}" alt="金属度贴图" width="200"/>|<img src="{{ "/img/pbr/indirectDiffuse.png" | prepend: site.baseurl }}" alt="环境光漫反射" width="200"/>|
+$$L_{输出}=(L_{环境光照}+L_{直接光照})+L_{自发光}$$
+
+
+### 环境光照计算
+
+$$L_{环境光照}=(L_{环境漫反射} + L_{环境高光})*AO$$
+
+#### 环境漫反射
+
+$$L_{漫反射颜色} = (L_{基础色} - L_{金属度}) * (1 - 0.04)$$
+
+0.04是一个常量，Unity将非金属的反射率定义为4%。
+
+|<img src="{{ "/img/pbr/indirectDiffuseColor.png" | prepend: site.baseurl }}" alt="环境光漫反射" width="200"/>|等于|<img src="{{ "/img/pbr/albedo.png" | prepend: site.baseurl }}" alt="基础色贴图" width="200"/>|减去|<img src="{{ "/img/pbr/metallic.png" | prepend: site.baseurl }}" alt="金属度贴图" width="200"/>|
+|:---:|:---:|:---:|:---:|:---:|
+|漫反射颜色|=|基础色|-|金属度|
+
+金属度越强(白)表示对光线的吸收能力越强，光线能反射出的颜色就越暗。金属度为0时，光线则全部被材质表面吸收。
+
+漫反射项用球谐光照求出，环境光照的漫反射部分，就可以通过漫反射颜色乘以漫反射项算出结果。
+
+$$L_{环境漫反射} = L_{漫反射颜色} * L_{漫反射项}$$
+
+|<img src="{{ "/img/pbr/indirectDiffuse.png" | prepend: site.baseurl }}" alt="环境光漫反射" width="200"/>|等于|<img src="{{ "/img/pbr/indirectDiffuseColor.png" | prepend: site.baseurl }}" alt="基础色贴图" width="200"/>|乘以|<img src="{{ "/img/pbr/indirectDiffuseTerm.png" | prepend: site.baseurl }}" alt="金属度贴图" width="200"/>|
+|:---:|:---:|:---:|:---:|:---:|
+|环境漫反射|=|漫反射颜色|*|漫反射项|
+
+#### 环境高光
+
+$$L_{环境高光} = L_{HDR采样} * L_{表面高光颜色}$$
+
+|<img src="{{ "/img/pbr/indirectSpecular.png" | prepend: site.baseurl }}" alt="环境光漫反射" width="200"/>|等于|<img src="{{ "/img/pbr/indirectSpecularColor.png" | prepend: site.baseurl }}" alt="基础色贴图" width="200"/>|乘以|<img src="{{ "/img/pbr/indirectSpecularTerm.png" | prepend: site.baseurl }}" alt="金属度贴图" width="200"/>|
+|:---:|:---:|:---:|:---:|:---:|
+|环境高光|=|HDR采样|*|表面高光颜色|
+
+#### 环境光照
+用上面算出的环境漫反射加上环境高光就得出了环境光照结果。
+
+|<img src="{{ "/img/pbr/indirectLighting.png" | prepend: site.baseurl }}" alt="环境光漫反射" width="200"/>|等于|<img src="{{ "/img/pbr/indirectDiffuse.png" | prepend: site.baseurl }}" alt="基础色贴图" width="200"/>|加上|<img src="{{ "/img/pbr/indirectSpecular.png" | prepend: site.baseurl }}" alt="金属度贴图" width="200"/>|
+|:---:|:---:|:---:|:---:|:---:|
+|环境光照|=|环境漫反射|+|环境高光|
+
+环境光照应用AO环境遮蔽
+
+|<img src="{{ "/img/pbr/indirectLightingWichOcclusion.png" | prepend: site.baseurl }}" alt="环境光漫反射" width="200"/>|等于|<img src="{{ "/img/pbr/indirectLighting.png" | prepend: site.baseurl }}" alt="基础色贴图" width="200"/>|乘以|<img src="{{ "/img/pbr/occlusion.png" | prepend: site.baseurl }}" alt="金属度贴图" width="200"/>|
+|:---:|:---:|:---:|:---:|:---:|
+|环境光照|=|环境光照|*|环境遮蔽|
+
+### 直接光照计算
+
+|<img src="{{ "/img/pbr/directSpecular.png" | prepend: site.baseurl }}" alt="环境光漫反射" width="200"/>|等于|<img src="{{ "/img/pbr/directSpecularColor.png" | prepend: site.baseurl }}" alt="基础色贴图" width="200"/>|乘以|<img src="{{ "/img/pbr/directSpecularTerm.png" | prepend: site.baseurl }}" alt="金属度贴图" width="200"/>|
+|:---:|:---:|:---:|:---:|:---:|
+|直接高光|=|高光颜色|*|BRDF|
+
+|<img src="{{ "/img/pbr/directSpecular.png" | prepend: site.baseurl }}" alt="环境光漫反射" width="200"/>|等于|<img src="{{ "/img/pbr/directSpecular.png" | prepend: site.baseurl }}" alt="基础色贴图" width="200"/>|加上|<img src="{{ "/img/pbr/directSpecularTerm.png" | prepend: site.baseurl }}" alt="金属度贴图" width="200"/>|
+|:---:|:---:|:---:|:---:|:---:|
+|直接光照|=|漫反射|+|直接高光|
