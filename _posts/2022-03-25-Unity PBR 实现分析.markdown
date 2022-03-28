@@ -72,10 +72,10 @@ $$L_{环境高光} = L_{HDR采样} * L_{表面高光颜色}$$
 
 #### 最终结果
 
-|<img src="{{ "/img/pbr/final.png" | prepend: site.baseurl }}" alt="环境光漫反射" width="200"/>|等于|<img src="{{ "/img/pbr/indirectLightingWichOcclusion.png" | prepend: site.baseurl }}" alt="基础色贴图" width="200"/>|机上|<img src="{{ "/img/pbr/directLightingWithRadiance.png" | prepend: site.baseurl }}" alt="金属度贴图" width="200"/>|
+|<img src="{{ "/img/pbr/final.png" | prepend: site.baseurl }}" alt="环境光漫反射" width="200"/>|等于|<img src="{{ "/img/pbr/indirectLightingWichOcclusion.png" | prepend: site.baseurl }}" alt="基础色贴图" width="200"/>|加上|<img src="{{ "/img/pbr/directLightingWithRadiance.png" | prepend: site.baseurl }}" alt="金属度贴图" width="200"/>|
 |:---:|:---:|:---:|:---:|:---:|
 |输出光照|=|环境光照|+|直接光照|
 
-|<img src="{{ "/img/pbr/finalWithEmission.png" | prepend: site.baseurl }}" alt="环境光漫反射" width="200"/>|等于|<img src="{{ "/img/pbr/final.png" | prepend: site.baseurl }}" alt="基础色贴图" width="200"/>|机上|<img src="{{ "/img/pbr/emission.png" | prepend: site.baseurl }}" alt="金属度贴图" width="200"/>|
+|<img src="{{ "/img/pbr/finalWithEmission.png" | prepend: site.baseurl }}" alt="环境光漫反射" width="200"/>|等于|<img src="{{ "/img/pbr/final.png" | prepend: site.baseurl }}" alt="基础色贴图" width="200"/>|加上|<img src="{{ "/img/pbr/emission.png" | prepend: site.baseurl }}" alt="金属度贴图" width="200"/>|
 |:---:|:---:|:---:|:---:|:---:|
 |输出光照|=|输出光照|+|自发光|
