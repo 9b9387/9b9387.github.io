@@ -35,7 +35,7 @@ kramdown:
   math_engine: null
 plainwhite:
   name: 9b9387
-  tagline: 灵感本是圣经偶然的卷角
+  tagline: 灵感本是圣经偶然的卷角\n上帝不平整的那句甜言蜜语
   date_format: "%b %-d, %Y"
 
   social_links:
