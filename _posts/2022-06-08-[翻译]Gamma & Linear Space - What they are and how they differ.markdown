@@ -98,3 +98,5 @@ To learn more about our team at KinematicSoup and how we are working to help Uni
 [http://www.slideshare.net/ozlael/hable-john-uncharted2-hdr-lighting](http://www.slideshare.net/ozlael/hable-john-uncharted2-hdr-lighting)
 
 这篇文章作者为：Scott Sewell, KinematicSoup的一个开发者，翻译：9b9387。
+
+[原文链接](https://www.kinematicsoup.com/news/2016/6/15/gamma-and-linear-space-what-they-are-how-they-differ)
