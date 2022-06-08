@@ -65,9 +65,7 @@ Fortunately, Unity is able to switch between color spaces very easily, and for m
 
 幸运的是，Unity可以很容易的在不同的颜色空间之间切换，对于许多项目来说，可以无缝地与你的渲染管线一起工作。Unity默认使用伽马空间，因为只有PC，Xbox和PlayStation平台支持线性渲染（注：文章写于2016年，现在移动设备也支持线性渲染），对于这些平台，要在线性空间和伽马空间之间进行转换，需要执行：
 
-```
-Edit -> Project Settings -> Player -> Other Settings
-```
+**Edit -> Project Settings -> Player -> Other Settings**
 
 Here, there will be an option called Color Space, where you can choose either Linear or Gamma. It’s as easy as that! Shaders should now receive non-gamma corrected textures. Do note that if your project is already in development, you’ll likely need to rework the lighting and various textures to produce a good result, since the rendered scene will not look the same as before. If you had any lightmaps baked, they will need to be re-baked to be correct.
 
