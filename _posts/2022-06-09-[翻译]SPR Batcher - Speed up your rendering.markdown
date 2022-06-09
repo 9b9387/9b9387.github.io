@@ -41,22 +41,20 @@ A dedicated code is managing a large “per object” GPU CBUFFER
 
 For an object to be rendered through the SRP Batcher code path, there are two requirements:
 
-一个物体能通过SRP BVatcher渲染，有两个条件：
+一个物体能通过SRP Batcher渲染，有两个条件：
 
-The object must be in a mesh. It cannot be a particle or a skinned mesh.
+- The object must be in a mesh. It cannot be a particle or a skinned mesh.
 - 这个对象必须是使用Mesh组件，而不能是Skinned Mesh组件。
-
-You must use a Shader that is compatible with the SRP Batcher. All Lit and Unlit Shaders in HDRP and LWRP fit this requirement.
+- You must use a Shader that is compatible with the SRP Batcher. All Lit and Unlit Shaders in HDRP and LWRP fit this requirement.
 - Shader必须适配SRP Batcher。HDRP和URP下的Lit和Unlit Shader都满足需求。
 
 For a Shader to be compatible with SRP:
 
 Shader适配SRP需要满足：
 
-All built-in engine properties must be declared in a single CBUFFER named “UnityPerDraw”. For example, unity_ObjectToWorld, or unity_SHAr.
+- All built-in engine properties must be declared in a single CBUFFER named “UnityPerDraw”. For example, unity_ObjectToWorld, or unity_SHAr.
 - 引擎内建的属性列表，含有名为UnityPerDraw的CBUFFER声明。例如： unity_ObjectToWorld, unity_SHAr …
-
-All Material properties must be declared in a single CBUFFER named “UnityPerMaterial”.
+- All Material properties must be declared in a single CBUFFER named “UnityPerMaterial”.
 - Shader的属性声明，含有名为 UnityPerMaterial的CBUFFER声明
 
 You can see the compatibility status of a Shader in the Inspector panel. This compatibility section is only displayed if your Project is SRP based.
