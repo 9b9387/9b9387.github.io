@@ -15,7 +15,7 @@ First we need to know what linear color space is. Simply, it means that numerica
 
 首先我们需要知道什么是线性颜色空间。简单地说，就是数值的大小与感知强度为对应关系，这意味着颜色可以正确的相加和相乘。没有这种属性的颜色空间被称为“非线性”。下面是一个例子，强度值在线性和非线性颜色空间分别做加倍计算，在线性空间中对应的结果是正确的，但是在非线性空间中（gamma=0.45，稍后会详细介绍），我们不能通过简单的计算获取正确的数值强度。
 
-![在线性和非线性空间中加倍深灰色正方形的强度]({{ "/img/gamma_linear/Linear.png" | prepend: site.baseurl }})
+![在线性和非线性空间中加倍深灰色正方形的强度]({{ "/img/gamma_linear/Linear.png" | prepend: site.baseurl }}#pic_center)
 
 ### GAMMA SPACE 伽马空间
 
@@ -23,13 +23,13 @@ The need for gamma arises for two main reasons: The first is that screens have a
 
 之所以需要伽玛射线，主要有两个原因：第一，屏幕对强度的响应是非线性的，另一个原因是，相比于浅色调人类的眼睛能更好的分辨暗色调的不同。这意味着我们通过压缩图片来节省空间时，我们可以牺牲浅色的精度为代价来提供给暗色更多的精度。这两个问题都可以用伽马校正来解决，也就是说图片上每一个像素点的强度可以用一个幂函数来表示，伽马就是这个幂函数的名字。
 
-![伽马函数的图像 pow(x, gamma)]({{ "/img/gamma_linear/gamma_graph.png" | prepend: site.baseurl }})
+![伽马函数的图像 pow(x, gamma)]({{ "/img/gamma_linear/gamma_graph.png" | prepend: site.baseurl }}#pic_center)
 
 Looking at the above graph, it is apparent that any gamma aside from 1 is a non-linear space.
 
 上面的图表很明显，除1以外的任何gamma都是非线性空间。
 
-![两个常见的gamma值应用在中间的图像上]({{ "/img/gamma_linear/various_gamma.png" | prepend: site.baseurl }})
+![两个常见的gamma值应用在中间的图像上]({{ "/img/gamma_linear/various_gamma.png" | prepend: site.baseurl }}#pic_center)
 
 Most images are stored with a gamma of 0.45 applied to them, which will have the effect demonstrated in the above left image. The darker regions of the image are now recorded using a greater range of values while bright ranges are compressed. Images stored like this are in “gamma space”. For example, a neutral grey in an image doesn’t have a numerical intensity of 0.5, rather it is around 0.73, while pure whites and blacks remain the same. This is the default behavior of nearly every digital camera, as well as image editing applications and so on. In fact, nearly every image you see on your computer has that gamma applied to it.
 
@@ -53,7 +53,7 @@ Therefore, typical practice in PBR is to use a linear pipeline. Here, the input 
 
 因此，PBR的典型做法是使用线性管道。在这里，输入的颜色和纹理在着色前的伽马校正被删除，将它们放入线性空间。当着色时，结果是物理上正确的，因为着色过程和输入都在同一个空间。之后，任何后处理也应该在线性空间下进行计算，因为后期效果通常是线性的，比如阴影。最后，对结果进行伽马校正，使其在显示器的伽马调整后正确显示。
 
-![对比伽马和线性管线]({{ "/img/gamma_linear/comparing.png" | prepend: site.baseurl }})
+![对比伽马和线性管线]({{ "/img/gamma_linear/comparing.png" | prepend: site.baseurl }}#pic_center)
 
 Above you can see the difference between the end result of the gamma and linear pipelines on a simple sphere. Notice the brighter specular highlight and stronger falloff of the light in gamma space. These are examples of unrealistic behavior, and will make achieving photo-realism difficult.
 
