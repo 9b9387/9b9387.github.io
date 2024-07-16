@@ -24,10 +24,12 @@ github_username:  9b9387
 excerpt_separator: "\n\n"
 # Build settings
 markdown: kramdown
-#theme: plainwhite
-remote_theme: thelehhman/plainwhite-jekyll
-# gems:
-#   - jekyll-feed
+# theme: minima
+theme: plainwhite
+remote_theme: samarsault/plainwhite-jekyll
+plugins:
+  - jekyll-feed
+  - jekyll-minifier
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -37,11 +39,12 @@ plainwhite:
   name: 9b9387
   tagline: 如灰尘保佑的礼物
   date_format: "%b %-d, %Y"
-
+  portfolio_image: "assets/portfolio.png"
   social_links:
-    twitter: 9b9387
+    # twitter: 9b9387
     github: 9b9387
   search: true
+  sitemap: true
   # navigation:
   #   - title: My Work
   #     url: "/my-work"
