@@ -34,5 +34,5 @@ jobs:
 
       - name: Upload to OSS
         run: |
-          # 使用 --delete 参数确保 OSS 上的文件与本地 _site 目录完全同步
-          ossutil cp -r _site/ oss://${{ secrets.OSS_BUCKET }}/ --force --recursive --delete
+          # 使用 sync 命令配合 --delete 参数，确保 OSS 上的内容与本地 _site 目录完全一致
+          ossutil sync _site/ oss://${{ secrets.OSS_BUCKET }}/ --delete
