@@ -3,6 +3,7 @@ layout: post
 title: "[OnePass] vault"
 data: 2020-07-10 21:00:00 +0800
 category: "OnePass"
+published: false
 ---
 
 `vault` is a simple password manager. Given a passphrase and the name of a service, it returns a strong password for that service. You only need to remember your passphrase, which you do not give to anyone, and vault will give a different password for every service you use. The passphrase can be any text you like.
