@@ -1,0 +1,38 @@
+name: Deploy to Aliyun OSS
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Build Site
+        run: |
+          bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Setup ossutil
+        uses: manyuanrong/setup-ossutil@v2.0
+        with:
+          endpoint: "oss-cn-beijing.aliyuncs.com"
+          access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+
+      - name: Upload to OSS
+        run: |
+          # 使用 --delete 参数确保 OSS 上的文件与本地 _site 目录完全同步
+          ossutil cp -r _site/ oss://${{ secrets.OSS_BUCKET }}/ --force --recursive --delete
