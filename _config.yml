@@ -30,6 +30,8 @@ remote_theme: samarsault/plainwhite-jekyll
 plugins:
   - jekyll-feed
   - jekyll-minifier
+  - jekyll-remote-theme
+  - jekyll-seo-tag
 exclude:
   - Gemfile
   - Gemfile.lock
