@@ -30,11 +30,12 @@ jobs:
           curl https://gosspublic.alicdn.com/ossutil/install.sh | sudo bash
 
       - name: Sync to OSS
-        env:
-          # ossutil v2 会自动识别这些环境变量名
-          OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
-          OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
         run: |
+          # 显式使用 -i 和 -k 参数传递密钥，避免环境变量不生效的问题
           # 华北2 (北京) 的 endpoint 为 oss-cn-beijing.aliyuncs.com
-          # --delete 确保 OSS 与本地 _site 目录同步镜像
-          ossutil sync _site/ oss://${{ secrets.OSS_BUCKET }}/ -e oss-cn-beijing.aliyuncs.com --delete --force
+          ossutil sync _site/ oss://${{ secrets.OSS_BUCKET }}/ \
+            -e oss-cn-beijing.aliyuncs.com \
+            -i ${{ secrets.OSS_ACCESS_KEY_ID }} \
+            -k ${{ secrets.OSS_ACCESS_KEY_SECRET }} \
+            --delete \
+            --force
