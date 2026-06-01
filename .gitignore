@@ -5,3 +5,5 @@ node_modules
 .jekyll-metadata
 vendor/bundle
 .bundle
+!assets/js/dist/
+!assets/js/dist/post.min.js

@@ -1,8 +1,12 @@
 ---
 layout: post
-title: "为什么我不再使用“保险箱”式的密码管理器"
+title: "密码管理：用生成密码替代存储密码"
 date: 2026-04-22 10:00:00 +0800
+last_modified_at: 2026-06-01 17:10:00 +0800
+author: 9b9387
 category: "Security"
+tags:
+  - Security
 ---
 
 ### 我为什么决定自己写一个密码工具

@@ -28,13 +28,30 @@ highlighter: rouge
 paginate: 10
 lang: zh-CN
 timezone: Asia/Shanghai
+toc: true
+
+compress_html:
+  blanklines: true
+  ignore:
+    envs: all
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      toc: true
 
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-archives
-  - jekyll-feed
   - jekyll-include-cache
 
 exclude:
@@ -44,9 +61,6 @@ exclude:
   - node_modules
   - tools
   - docs
-
-include:
-  - _tabs
 
 # Chirpy Specifics
 jekyll-archives:
