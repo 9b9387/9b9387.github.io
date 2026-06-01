@@ -2,11 +2,20 @@ title: 记事本
 tagline: 如灰尘保佑的礼物
 description: >-
   9b9387's personal notebook.
-url: ""
+url: "https://biubiu.cool"
 baseurl: ""
 author:
   name: 9b9387
   github: 9b9387
+  twitter: 9b9387
+
+# The avatar on sidebar, support local or CORS resources
+avatar: /assets/portfolio.png
+
+social:
+  links:
+    - https://github.com/9b9387
+    - https://twitter.com/9b9387
 
 theme: jekyll-theme-chirpy
 
