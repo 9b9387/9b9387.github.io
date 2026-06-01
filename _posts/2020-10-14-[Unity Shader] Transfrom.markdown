@@ -147,6 +147,7 @@ void vert(inout appdata_full v)
 ```
 
 顶点缩放，旋转，移动的公式：
+
 $$
 \left\{ \begin{matrix}
 x \\ y \\ z

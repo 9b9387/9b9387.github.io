@@ -14,35 +14,49 @@ math: true
 用于高斯模糊的高斯核（Gaussian Kernel）是一个正方形的像素阵列，其中像素值对应于2D高斯曲线的值。
 下面是一个典型的高斯核：
 
-$$\frac{1}{256} \cdot \begin{bmatrix}1 & 4 & 6 & 4 & 1\\ 4 & 16 & 24 & 16 & 4\\6&24&36&24&6\\4&16&24&16&4\\1&4&6&4&1 \end{bmatrix}$$
+$$
+\frac{1}{256} \cdot \begin{bmatrix}1 & 4 & 6 & 4 & 1\\ 4 & 16 & 24 & 16 & 4\\6&24&36&24&6\\4&16&24&16&4\\1&4&6&4&1 \end{bmatrix}
+$$
 
 图像中的每个像素被乘以高斯核，然后将所有这些值相加，得到输出图像中此处的值。
 
 N维空间高斯模糊方程表示为：
 
-$$G(r)=\frac{1}{\sqrt{2\pi\sigma^2}^N}e^{\frac{-r^2}{2\sigma^2}}$$
+$$
+G(r)=\frac{1}{\sqrt{2\pi\sigma^2}^N}e^{\frac{-r^2}{2\sigma^2}}
+$$
 
 在二维空间定义为：
 
-$$G(u, v)=\frac{1}{2\pi\sigma^2}e^\frac{-(u^2+v^2)}{2\sigma^2}$$
+$$
+G(u, v)=\frac{1}{2\pi\sigma^2}e^\frac{-(u^2+v^2)}{2\sigma^2}
+$$
 
 其中，r是模糊半径
 
-$$r^2= u^2 + v^2$$
+$$
+r^2= u^2 + v^2
+$$
 
 高斯模糊也可以在二维图像上对两个独立的一维空间分别进行计算，即满足线性可分（Linearly separable）。这也就是说，使用二维矩阵变换得到的效果也可以通过在水平方向进行一维高斯矩阵变换加上竖直方向的一维高斯矩阵变换得到。从计算的角度来看，这是一项有用的特性，因为这样计算复杂度只需要：
 
-$$O(n \times M \times N) + O(m \times M \times N)$$
+$$
+O(n \times M \times N) + O(m \times M \times N)
+$$
 
 而原先计算的复杂度为：
 
-$$O(m \times n \times M \times N)$$
+$$
+O(m \times n \times M \times N)
+$$
 
 其中，M，N是需要进行滤波的图像的维数，m，n是滤波器的维数。
 
 以下为一个Gaussian Kernel的线性分解过程：
 
-$$\frac{1}{256} \cdot \begin{bmatrix}1 & 4 & 6 & 4 & 1\\ 4 & 16 & 24 & 16 & 4\\6&24&36&24&6\\4&16&24&16&4\\1&4&6&4&1 \end{bmatrix} = \frac{1}{256} \cdot \begin{bmatrix}1\\4\\6\\4\\1 \end{bmatrix} \cdot \begin{bmatrix}1&4&6&4&1 \end{bmatrix}$$
+$$
+\frac{1}{256} \cdot \begin{bmatrix}1 & 4 & 6 & 4 & 1\\ 4 & 16 & 24 & 16 & 4\\6&24&36&24&6\\4&16&24&16&4\\1&4&6&4&1 \end{bmatrix} = \frac{1}{256} \cdot \begin{bmatrix}1\\4\\6\\4\\1 \end{bmatrix} \cdot \begin{bmatrix}1&4&6&4&1 \end{bmatrix}
+$$
 
 实现方面，可以采用经过线性分解的高斯核的方案，且用乒乓RT交互blit的方法。高斯模糊对应的Fragment Shader的实现为：
 
