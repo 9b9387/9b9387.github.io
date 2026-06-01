@@ -1,55 +1,41 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
 title: 记事本
-author: 9b9387
-email: 9b9387#gmail dot com
-description: > # this means to ignore newlines until "baseurl:"
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: 9b9387
-github_username:  9b9387
-excerpt_separator: "\n\n"
+tagline: 如灰尘保佑的礼物
+description: >-
+  9b9387's personal notebook.
+url: ""
+baseurl: ""
+author:
+  name: 9b9387
+  github: 9b9387
+
+theme: jekyll-theme-chirpy
+
 # Build settings
 markdown: kramdown
-# theme: minima
-# theme: plainwhite
-remote_theme: samarsault/plainwhite-jekyll
+highlighter: rouge
+paginate: 10
+lang: en
+timezone: UTC
+
 plugins:
-  - jekyll-feed
-  - jekyll-minifier
-  - jekyll-remote-theme
+  - jekyll-paginate
+  - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-archives
+  - jekyll-include-cache
+
 exclude:
+  - vendor
   - Gemfile
   - Gemfile.lock
-kramdown:
-  math_engine: null
-plainwhite:
-  name: 9b9387
-  tagline: 如灰尘保佑的礼物
-  date_format: "%b %-d, %Y"
-  portfolio_image: "assets/portfolio.png"
-  social_links:
-    # twitter: 9b9387
-    github: 9b9387
-  search: true
-  sitemap: true
-  # navigation:
-  #   - title: My Work
-  #     url: "/my-work"
-  #   - title: Resume
-  #     url: "/resume"
-show_excerpts: true
+  - node_modules
+  - tools
+  - docs
+
+# Chirpy Specifics
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts: category
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
