@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[翻译]SPR Batcher - Speed up your rendering"
-data: 2022-06-09 12:00:00 +0800
+date: 2022-06-09 12:00:00 +0800
 category: "翻译 TA"
 ---
 

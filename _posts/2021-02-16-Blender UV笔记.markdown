@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Blender UV笔记"
-data: 2021-02-16 12:00:00 +0800
+date: 2021-02-16 12:00:00 +0800
 category: "Blender"
 ---
 

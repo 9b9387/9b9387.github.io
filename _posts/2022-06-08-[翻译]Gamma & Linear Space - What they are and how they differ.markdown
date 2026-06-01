@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[翻译]Gamma & Linear Space - What they are and how they differ"
-data: 2022-06-08 12:00:00 +0800
+date: 2022-06-08 12:00:00 +0800
 category: "翻译 TA"
 ---
 

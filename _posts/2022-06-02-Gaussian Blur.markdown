@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Gaussian Blur"
-data: 2022-06-02 12:00:00 +0800
+date: 2022-06-02 12:00:00 +0800
 category: "Blur TA"
 ---
 

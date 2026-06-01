@@ -33,6 +33,9 @@ exclude:
   - tools
   - docs
 
+include:
+  - _tabs
+
 # Chirpy Specifics
 jekyll-archives:
   enabled: [categories, tags]

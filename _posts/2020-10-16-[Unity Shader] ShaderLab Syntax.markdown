@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Unity Shader] ShaderLab Syntax"
-data: 2020-10-16 12:00:00 +0800
+date: 2020-10-16 12:00:00 +0800
 category: "Unity Shader"
 ---
 Unity中所有的着色器都是用ShaderLab语法编写的。实际着色器的代码位于`CGPROGRAM`代码片段中。
