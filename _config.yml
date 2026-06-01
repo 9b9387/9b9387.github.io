@@ -21,6 +21,9 @@ theme: jekyll-theme-chirpy
 
 # Build settings
 markdown: kramdown
+kramdown:
+  math_engine: null
+  syntax_highlighter: rouge
 highlighter: rouge
 paginate: 10
 lang: zh-CN

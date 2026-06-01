@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3.3"
 gem "jekyll-theme-chirpy", "~> 6.0.0"
+gem "rake"
 gem "csv"
 gem "base64"
 gem "mutex_m"
