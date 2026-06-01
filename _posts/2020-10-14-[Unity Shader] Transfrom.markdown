@@ -3,6 +3,7 @@ layout: post
 title: "[Unity Shader] Transfrom"
 date: 2020-10-14 12:00:00 +0800
 category: "Unity Shader"
+math: true
 ---
 之前研究OpenGL的时候接触的矩阵变换，在Unity中用Surface Shader实现一次，当作入门Unity ShaderLab的Hello World。
 

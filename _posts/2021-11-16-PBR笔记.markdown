@@ -3,6 +3,7 @@ layout: post
 title: "PBR笔记"
 date: 2021-11-16 12:00:00 +0800
 category: "Unity TA"
+math: true
 ---
 ### 渲染方程（The Rendering Equation）
 渲染方程的物理基础是能量守恒定律。在一个特定的位置和方向，出射光 Lo 是自发光 Le 与反射光线之和，反射光线本身是各个方向的入射光 Li 之和乘以表面反射率及入射角。

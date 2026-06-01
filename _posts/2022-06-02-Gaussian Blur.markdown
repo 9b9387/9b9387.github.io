@@ -3,6 +3,7 @@ layout: post
 title: "Gaussian Blur"
 date: 2022-06-02 12:00:00 +0800
 category: "Blur TA"
+math: true
 ---
 
 高斯模糊（Gaussian Blur），也叫高斯平滑（Gaussian smoothing），作为最经典的模糊算法，一度成为模糊算法的代名词。
