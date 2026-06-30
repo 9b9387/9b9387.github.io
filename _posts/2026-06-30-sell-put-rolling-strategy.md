@@ -4,9 +4,6 @@ title: "卖PUT移仓（Rolling）如何稳定获利 — 策略全解"
 date: 2026-06-30 12:00:00 +0800
 categories: [投资, 期权]
 tags: [期权, 卖PUT, 移仓, 策略, Theta, 时间价值, 风控]
-image:
-  path: /img/put-rolling-strategy.jpg
-  alt: "卖PUT移仓策略"
 ---
 
 卖PUT是期权交易中最经典的"时间的朋友"策略——你不需要猜股价涨跌，只需要股价**不跌到某个位子**就能稳定收钱。而**移仓（Rolling）** 是把这种收益持续滚动下去的核心操作。
