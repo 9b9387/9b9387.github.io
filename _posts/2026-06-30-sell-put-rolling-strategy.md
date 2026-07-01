@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "卖PUT移仓（Rolling）如何稳定获利 — 策略全解"
-date: 2026-06-30 12:00:00 +0800
+date: 2026-06-30 00:00:00 +0800
 categories: [投资, 期权]
 tags: [期权, 卖PUT, 移仓, 策略, Theta, 时间价值, 风控]
 ---

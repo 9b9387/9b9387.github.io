@@ -4,13 +4,14 @@ title: "深度ITM LEAPS 筛选体系 — 用打折价锁定正股长期敞口"
 date: 2026-07-01 00:00:00 +0800
 categories: [投资, 期权]
 tags: [期权, LEAPS, 深度ITM, 筛选, 正股替代, Delta, IV, 策略]
+image:
+  path: /img/leaps/leaps-pmcc-cover.png
+  alt: "LEAPS & PMCC 策略手绘题图"
 ---
 
 LEAPS（到期 ≥ 1 年的长期期权）是期权交易中最被低估的工具之一。选对了，它几乎就是"打折买正股 + 少量租金"——用 40-70% 的资金锁定 90-99% 的涨跌幅。
 
 这篇文章整理了一套系统化的深度 ITM LEAPS 筛选框架，以及如何通过 Agent 自动化执行筛选。
-
-![cover](/img/leaps/leaps-pmcc-cover.png)
 
 ---
 
