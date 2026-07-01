@@ -10,6 +10,8 @@ LEAPS（到期 ≥ 1 年的长期期权）是期权交易中最被低估的工�
 
 这篇文章整理了一套系统化的深度 ITM LEAPS 筛选框架，以及如何通过 Agent 自动化执行筛选。
 
+![cover](/img/leaps/leaps-pmcc-cover.png)
+
 ---
 
 ## 一、什么是深度 ITM LEAPS CALL？
