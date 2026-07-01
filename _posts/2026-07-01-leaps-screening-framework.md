@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "深度ITM LEAPS 筛选体系 — 用打折价锁定正股长期敞口"
-date: 2026-07-01 12:00:00 +0800
+date: 2026-07-01 00:00:00 +0800
 categories: [投资, 期权]
 tags: [期权, LEAPS, 深度ITM, 筛选, 正股替代, Delta, IV, 策略]
 ---
